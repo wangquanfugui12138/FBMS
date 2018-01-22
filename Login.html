@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台登录</title>
+    <link rel="stylesheet" href="Login.css"/>
+    <link rel="stylesheet" href="bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<body>
+    <div id="panoramaConianer"></div>
+    <div id="main" class="main" ng-app="loginApp">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="head">LoGin</span>
+            </div>
+            <div class="panel-body" ng-controller="loginCtrl">
+                <form name="loginForm">
+                    <div class="form-group">
+                        <img class="imgU" src="Image/ZH.bmp"/>
+                        <input id="un" name="name" class="form-control input-lg" type="text"
+                               placeholder="请输入账号" required ng-model="userdata.name"/>
+                        <span ng-class="{'fa fa-check':loginForm.name.$valid&&loginForm.name.$touched,
+                        'fa fa-close':loginForm.name.$invalid&&loginForm.name.$touched}"></span>
+                    </div>
+                    <div class="form-group">
+                        <img class="imgP" src="Image/MM.bmp"/>
+                        <input id="pw" name="pwd" class="form-control input-lg" type="password"
+                               placeholder="请输入密码" required ng-model="userdata.pwd"/>
+                        <span ng-class="{'fa fa-check':loginForm.pwd.$valid&&loginForm.pwd.$touched,
+                        'fa fa-close':loginForm.pwd.$invalid&&loginForm.pwd.$touched}"></span>
+                    </div>
+                    <div class="form-group">
+                        <input class="button " type="button" value="登录" ng-click="sb()"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="jquery-3.2.1.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/three.js/r83/three.js"></script>
+<script src="angular.min.js"></script>
+<script src="Login.js" charset="gbk"></script>
+<script src="tpanorama.js"></script>
+</body>
+</html>

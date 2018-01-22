@@ -1,0 +1,149 @@
+
+<div class="search">
+    <div class="row pd-bottom-2">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">公司名称</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" required>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">公司行业</label>
+                <div class="col-md-8">
+                    <select class="form-control" required>
+                        <option value="">全部</option>
+                        <option value="0">移动互联网</option>
+                        <option value="1">电子商务</option>
+                        <option value="2">企业服务</option>
+                        <option value="3">O2O</option>
+                        <option value="4">教育</option>
+                        <option value="5">金融</option>
+                        <option value="6">游戏</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">产品名称</label>
+                <div class="col-md-8">
+                    <input class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pd-bottom-2">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">认证状态</label>
+                <div class="col-md-8">
+                    <select class="form-control">
+                        <option value="">全部</option>
+                        <option value="0">未认证</option>
+                        <option value="1">已认证</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">冻结状态</label>
+                <div class="col-md-8">
+                    <select class="form-control">
+                        <option value="">全部</option>
+                        <option value="0">正常</option>
+                        <option value="1">冻结</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">融资规模</label>
+                <div class="col-md-8">
+                    <select class="form-control" required>
+                        <option value="">全部</option>
+                        <option value="0">无需融资</option>
+                        <option value="1">天使轮</option>
+                        <option value="2">A轮</option>
+                        <option value="3">B轮</option>
+                        <option value="4">C轮</option>
+                        <option value="5">D轮及以上</option>
+                        <option value="6">上市公司</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--地区选择-->
+    <div class="row pd-bottom-2">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label class="control-label col-md-2 word-spacing-25">地 区</label>
+                <div class="col-md-10">
+                    <div class="row"><div class="col-md-4"><select required="" name="province" class="form-control"><option value="" class="">请选择省份</option><option value="0" label="北京市">北京市</option><option value="1" label="天津市">天津市</option><option value="2" label="河北省">河北省</option><option value="3" label="山西省">山西省</option><option value="4" label="内蒙古自治区">内蒙古自治区</option><option value="5" label="辽宁省">辽宁省</option><option value="6" label="吉林省">吉林省</option><option value="7" label="黑龙江省">黑龙江省</option><option value="8" label="上海市">上海市</option><option value="9" label="江苏省">江苏省</option><option value="10" label="浙江省">浙江省</option><option value="11" label="安徽省">安徽省</option><option value="12" label="福建省">福建省</option><option value="13" label="江西省">江西省</option><option value="14" label="山东省">山东省</option><option value="15" label="河南省">河南省</option><option value="16" label="湖北省">湖北省</option><option value="17" label="湖南省">湖南省</option><option value="18" label="广东省">广东省</option><option value="19" label="海南省">海南省</option><option value="20" label="广西壮族自治区">广西壮族自治区</option><option value="21" label="甘肃省">甘肃省</option><option value="22" label="陕西省">陕西省</option><option value="23" label="新疆维吾尔自治区">新疆维吾尔自治区</option><option value="24" label="青海省">青海省</option><option value="25" label="宁夏回族自治区">宁夏回族自治区</option><option value="26" label="重庆市">重庆市</option><option value="27" label="四川省">四川省</option><option value="28" label="贵州省">贵州省</option><option value="29" label="云南省">云南省</option><option value="30" label="西藏自治区">西藏自治区</option><option value="31" label="台湾省">台湾省</option><option value="32" label="澳门特别行政区">澳门特别行政区</option><option value="33" label="香港特别行政区">香港特别行政区</option></select></div><div class="col-md-4"><select required="" name="city" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="city" ng-options="city.CityID as city.CityName for city in filteredCities"><option value="" class="">请选择城市</option></select></div><div class="col-md-4"><select required="" name="district" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="district" ng-options="district.Id as district.countyName for district in filteredDistricts"><option value="" class="">请选择地区</option></select></div></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right ">
+            <div>
+                <button type="button" class="btn btn-danger" ng-click="clean()">清空</button>
+                <button type="button" class="btn btn-success" ng-click="search()">搜索</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content" ng-controller="comListCtrl">
+    <div class="panel-heading">
+        <strong>公司列表</strong>
+        <a href="#/addCompany" class="btn btn-primary btn-xs pull-right" >+&nbsp;新增</a>
+    </div>
+    <div class="panel-body table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>公司名称</th>
+                <th>所在行业</th>
+                <th>地区</th>
+                <th>认证规模</th>
+                <th>冻结状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in comlistData | exc">
+                <td>{{ x.id}}</td>
+                <td>{{ x.name}}</td>
+                <td>{{ x.industryList}}</td>
+                <td>{{ x.province}}</td>
+                <td>{{ x.approved}}</td>
+                <td>{{ x.financing}}</td>
+                <td>{{ x.freezed}}</td>
+                <td>
+                    <a type="button" class="btn btn-sm" ng-click="cancel()">下线</a>
+                    <a type="button" class="btn btn-sm" ng-click="edit()">编辑</a>
+                    <a type="button" class="btn btn-sm" ng-click="delete()">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <ul class="pagination pull-right">
+        <li><a href="">首页</a></li>
+        <li><a href=""> &lt; </a></li>
+        <li><a href=""> 1 </a></li>
+        <li><a href=""> ... </a></li>
+        <li><a href=""> &gt; </a></li>
+        <li><a href="">末页</a></li>
+        <li>去第<input type="text">页</li>
+        <li><a href="" class="pull-right">确定</a></li>
+    </ul>
+</div>

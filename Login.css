@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+#panoramaConianer {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.main{
+    position: absolute;
+    width: 400px;
+    height: 320px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4%;
+    text-align: center;
+    background:rgba(255,255,255,.3);
+}
+.head{
+    font:normal small-caps bold 2rem "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    color: royalblue;
+}
+.imgU{
+    opacity: 0.7;
+    position: relative;
+    left: -160px;
+    top: 35px;
+}
+.imgP{
+    opacity: 0.7;
+    position: relative;
+    top: 40px;
+    left: -160px;
+}
+.fa{
+    position: relative;
+    left: 160px;
+    top: -35px;
+}
+.fa-check{
+    color:lime;
+}
+.fa-close{
+    color: red;
+}
+.button {
+    position: relative;
+    width: 368px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: royalblue;
+    border-radius: 5px;
+    border: 2px solid royalblue;
+    color: white;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-align: center;
+    font-size: 19px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: white;
+    color:royalblue ;
+    border: 2px solid royalblue;
+}
+.panel-body>form>.form-group{
+    height: 70px;
+}
+input[type='text'],input[type='password'] {
+    padding-left: 40px;
+}
+.error{
+    border: 1px solid red;
+}
+.error_txt{
+    color: red;
+}
+[ng-cloak]{display:none !important}
+

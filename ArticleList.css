@@ -1,0 +1,45 @@
+
+.search{
+    margin: 2%;
+    margin-top: 0;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #f5f5f5;
+    background-color: #fff;
+    font-size: 1.5rem;
+}
+.content{
+    margin: 2%;
+    border-radius: 4px;
+    border: 1px solid #f5f5f5;
+    background-color: #fff;
+    font-size: 1.5rem;
+}
+label{
+    text-align: center;
+}
+input{
+    border-radius: 4px;
+    border: 1px solid silver;
+}
+select{
+    height: 2rem;
+    border-radius: 4px;
+    border: 1px solid silver;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+.pagination>div{
+    background-color: transparent;
+}
+.pagination>li>input[type='text']{
+    width:25px;
+}
+.active{
+    background-color: #337ab7;
+}
+

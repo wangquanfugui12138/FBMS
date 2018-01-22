@@ -1,0 +1,112 @@
+<div ng-controller="artListCtrl">
+    <div class="search">
+    <div class="row pd-bottom-2">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">发布时间</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="例:2017-01-01" ng-model="seaData.startAt">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4 text-center ">—</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="例:2017-01-01" ng-model="seaData.endAt">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">类 型</label>
+                <div class="col-md-8">
+                    <select class="form-control" ng-model="seaData.type">
+                        <option value="">全部</option>
+                        <option value="0">首页Banner</option>
+                        <option value="1">找职位Banner</option>
+                        <option value="2">找精英Banner</option>
+                        <option value="3">行业大图</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pd-bottom-2">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label col-md-4">状 态</label>
+                <div class="col-md-8">
+                    <select class="form-control" ng-model="seaData.status">
+                        <option value="">全部</option>
+                        <option value="1">草稿</option>
+                        <option value="2">上线</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pd-bottom-2">
+        <div class="col-md-4 pull-right text-right">
+            <div>
+                <button type="button" class="btn btn-danger" ng-click="cle()">清空</button>
+                <button type="button" class="btn btn-success" ng-click="sea()">搜索</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="panel-heading">
+            <strong>Article列表</strong>
+            <a href ui-sref="addArticle" class="btn btn-success btn-xs pull-right" >+&nbsp;新增</a>
+        </div>
+        <div class="panel-body table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>类型</th>
+                    <th>发布时间</th>
+                    <th>修改时间</th>
+                    <th>发布者</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in artlistData | exc">
+                    <td>{{ x.id}}</td>
+                    <td>{{ x.title}}</td>
+                    <td>{{ x.type}}</td>
+                    <td>{{ x.createAt | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{ x.updateAt | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{ x.author}}</td>
+                    <td>{{ x.status}}</td>
+                    <td>
+                        <a type="button" class="btn btn-sm" ng-click="">下线</a>
+                        <a type="button" class="btn btn-sm" ng-click="">编辑</a>
+                        <a type="button" class="btn btn-sm" ng-click="">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <ul class="pagination pull-right">
+            <li><a href="" ng-click="turnPage(1,'/carrots-admin-ajax/a/article/search?size=10')">首页</a>
+            </li>
+            <li ng-if="paginationconf.curpage!=1">
+                <a href="" ng-click="turnPre()"> &lt; </a>
+            </li>
+            <li ng-repeat="x in paginationconf.totalpage track by $index" ng-class="{'active':x==paginationconf.curpage}">
+                <a href="" ng-click="turnPage(x,'/carrots-admin-ajax/a/article/search?size=10')">{{x}}</a>
+            </li>
+            <li ng-if="paginationconf.curpage!=paginationconf.totalpage.length">
+                <a href="" ng-click="turnNext()"> &gt; </a>
+            </li>
+            <li><a href="" ng-click="turnPage(paginationconf.totalpage.length,'/carrots-admin-ajax/a/article/search?size=10')">末页</a></li>
+            <li>去第<input type="text" ng-model="toPage">页</li>
+            <li><a href="" class="pull-right" ng-click="turnPage(toPage,'/carrots-admin-ajax/a/article/search?size=10')">确定</a></li>
+        </ul>
+    </div>
+</div>

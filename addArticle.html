@@ -1,0 +1,101 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong class="ng-scope">新增Article</strong>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" name="addform" ng-controller="addCtrl">
+            <div class="form-group">
+                <label class="col-md-2 control-label" >标题名称</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" ng-model="addData.title" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">类 型</label>
+                <div class="col-md-2">
+                    <select class="form-control" ng-model="addData.type" required>
+                        <option value="">请选择</option>
+                        <option value="0">首页Banner</option>
+                        <option value="1">找职位Banner</option>
+                        <option value="2">找精英Banner</option>
+                        <option value="3">行业大图</option>
+                    </select>
+
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">说 明</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" ng-model="addData.content" required>
+                </div>
+            </div>
+            <div class="form-group ng-scope">
+            <label class="col-md-2 control-label">跳转链接</label>
+            <div class="col-md-8">
+                <input class="form-control" type="text" ng-model="addData.url" required>
+            </div>
+        </div>
+            <div class="row form-group">
+                <label class="col-md-2 control-label">配 图</label>
+                <div class="col-md-10">
+                    <div class="col-md-12 ">
+                        <label class="btn btn-primary" for="file" ng-disabled="!isEmpty">选择文件</label>
+                        <input id="file" ng-model="image" style=" display: none" type="file" name="file"
+                               required accept="image/*" ngf-select ng-upload ng-disabled="!isEmpty">
+                    </div>
+                    <div class="col-md-12">
+                        <img alt="配图预览" ng-if="!isEmpty" ngf-src="image" style="width: 200px;height: 200px;max-height: 300px"
+                             class="img-responsive">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive col-md-8">
+                            <table class="table">
+                                <thead>
+                                <tr><th>图片名</th>
+                                    <th>文件大小</th>
+                                    <th>进度</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr></thead>
+                                <tbody>
+                                <tr ng-repeat="x in files" ng-if="$first">
+                                    <td><strong>{{x.name}}</strong></td>
+                                    <td>{{x.size/1024/1024 | number:2}}MB</td>
+                                    <td>
+                                        <div class="progress" style="margin-bottom: 0;">
+                                            <div class="progress-bar" role="progressbar"
+                                                 ng-style="{ 'width': progressPercentage + '%' }" style="width: 100%;"></div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <span ng-if="isUpload&&!isUpStatus"><i class="glyphicon glyphicon-ok"></i></span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-xs" ng-click="uploadFiles()" ng-disabled="isUpStatus||isUpload">
+                                            <span class="glyphicon glyphicon-upload"></span> 上传
+                                        </button>
+                                        <button  type="button" class="btn btn-danger btn-xs" ng-click="removeFile()">
+                                            <span class="glyphicon glyphicon-trash"></span> 删除
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button class="btn btn-success" ng-disabled="addform.$invalid || !isUpload" ng-click="addSub(1)">立即上线</button>
+                    <button class="btn btn-success" ng-disabled="addform.$invalid || !isUpload" ng-click="addSub(2)">存为草稿</button>
+                    <button class="btn btn-default pull-right" ui-sref="ArticleList">返回</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

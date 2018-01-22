@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>后台界面</title>
+    <link rel="stylesheet" href="Back.css" charset="gbk"/>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="ArticleList.css"/>
+</head>
+<body ng-app="bgApp">
+<div class="paper" >
+    <nav>
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="name">后台管理系统</span>
+        </div>
+        <div class="topbar">
+            <ul id="top-right" class="nav nav-pills navbar-right">
+                <li><a id="sf" href="javascript:void(0)" ng-bind="userData.id"></a></li>
+                <li class="hr"></li>
+                <li><a id="yh" href="javascript:void(0)" ng-bind="userData.name"></a></li>
+                <li class="hr"></li>
+                <li><a id="lo" href="javascript:void(0)" class="glyphicon glyphicon-off" ng-click="logout()"></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="collapse navbar-collapse navbar-responsive-collapse sidebar">
+        <ul id="left" class="nav nav-stacked" ng-controller="bgCtrl" >
+            <li id="welcome"><a href ui-sref="Welcome">WelCome!</a></li>
+            <li id="infoMa">
+                <div class="tips"></div>
+                <a href>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    信息管理
+                    <span class="glyphicon glyphicon-menu-left"></span>
+                </a>
+            </li>
+            <li id="infoMa_list1" style="display: none;text-indent: 60px">
+                <a href ui-sref="CompanyList">公司列表</a>
+            </li>
+            <li id="infoMa_list2" style="display: none;text-indent: 60px">
+                <a href ui-sref="JobList">职位列表</a>
+            </li>
+            <li id="artMa">
+                <div class="tips"></div>
+                <a href id="art">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Article管理
+                    <span class="glyphicon glyphicon-menu-left"></span>
+                </a>
+            </li>
+            <li id="artMa_list1" style="display: none;text-indent: 60px">
+                <a href ui-sref="ArticleList">Article列表</a>
+            </li>
+            <li id="bgMa">
+                <div class="tips"></div>
+                <a href>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    后台管理
+                    <span class="glyphicon glyphicon-menu-left"></span>
+                </a>
+            </li>
+            <li id="bgMa_list1" style="display: none;text-indent: 60px">
+                <a href ui-sref="accMag">账号管理</a>
+            </li>
+            <li id="bgMa_list2" style="display: none;text-indent: 60px">
+                <a href ui-sref="chaMag">角色管理</a>
+            </li>
+            <li id="bgMa_list3" style="display: none;text-indent: 60px">
+                <a href ui-sref="ediPwd">修改密码</a>
+            </li>
+            <li id="bgMa_list4" style="display: none;text-indent: 60px">
+                <a href ui-sref="modMag">模块管理</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="paper-w" ui-view>
+        </div>
+    </div>
+</div>
+</body>
+<script src="jquery-3.2.1.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="angular.min.js"></script>
+<script src="angular-ui-router.min.js"></script>
+<script src="ng-file-upload-shim.min.js"></script>
+<script src="ng-file-upload.min.js"></script>
+<script src="Back.js" charset="gbk"></script>
+</html>
